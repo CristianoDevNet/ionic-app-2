@@ -2,6 +2,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { ServiceProvider } from '../providers/service-provider';
+
 
 @NgModule({
   declarations: [
@@ -16,6 +18,6 @@ import { HomePage } from '../pages/home/home';
     MyApp,
     HomePage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [ServiceProvider, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
